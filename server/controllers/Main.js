@@ -1,46 +1,28 @@
-const userDb = require('../schemas/Schema')
+const articleDB = require('../schemas/articleSchema')
+const keywordDB = require('../schemas/keywordSchema')
+const fetch = require("node-fetch")
 
 module.exports = {
-    uploadUser: async (req, res) => {
-        let newUser = new userDb
-        newUser.name = req.body.name
-        newUser.age = req.body.age
-        newUser.email = req.body.email
-        newUser.password = req.body.password
-        newUser.save().then(() => {
-            res.send({error: false, message: 'Vartotojas įkeltas!'})
+    getData: async (request, response) => {
+        fetch(`https://gnews.io/api/v4/search?q=${request.body.keyword}&token=a5d07a8ff28b935680d86fe6800be2dc`)
+            .then(res => res.json())
+            .then(data => {
+                response.send({data, error: false})
+            })
+        let newKeyword = new keywordDB
+        newKeyword.time = Date(Date.now())
+        newKeyword.keyword = request.body.keyword
+        newKeyword.save()
+    },
+    article: async (req, res) => {
+        console.log(req.body)
+        let newArticle = new articleDB
+        newArticle.time = Date(Date.now())
+        newArticle.article = req.body
+        newArticle.save().then(() => {
+            res.send({error: false, message: 'Article saved to MongoDB!'})
         }).catch(e => {
             res.send({error: true, message: e})
         })
     },
-    showAllUsers: async (req, res) => {
-        let allUsers = await userDb.find()
-        res.send(allUsers)
-    },
-    delete: async (req, res) => {
-        await userDb.findOneAndDelete({_id: req.params.id})
-        let allUsers = await userDb.find()
-        res.send({error: false, users: allUsers, message: "Vartotojas ištrintas!"})
-    },
-    find: async (req, res) => {
-        let user = await userDb.findById({_id: req.params.id})
-        res.send({error: false, findUser: user})
-    },
-    edit: async (req, res) => {
-        await userDb.findByIdAndUpdate({_id: req.body.id},
-            {$set:
-                    {name: req.body.name,
-                     age: req.body.age,
-                     email: req.body.email,
-                     password: req.body.password},
-            },
-            {returnOriginal: false})
-            .then(() => {
-                res.send({error: false, msg: "User update successful"})
-            }).catch(e => {
-                console.log(e)
-                res.send({error: true, msg: "Wrong data", e})
-            })
-    },
-
 }

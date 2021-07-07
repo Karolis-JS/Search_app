@@ -1,20 +1,16 @@
-const emailValidator = require("email-validator");
 
 module.exports = {
-    checkUser: async (req, res, next) => {
+    checkKeyword: async (req, res, next) => {
+        console.log("Time:", Date(Date.now()), req.body )
         function error(status, message) {
             return res.send({error: status, message: message})
         }
-        if ((!/[^1-9]/.test(req.body.name))) {
-            return error(true, 'Vardas negali turėti skaičių!')
+        if (req.body.keyword === "") {
+            return error(true, 'Enter a keyword to search for the article')
         }
-
-        if (!Number(req.body.age)) {
-            return error(true, 'Amžius turi būti parašytas skaitmenimis')
-        }
-        if (!emailValidator.validate(req.body.email)) {
-            return error(true, 'Blogai įvestas el.paštas')
+        if (req.body.keyword.length > 40) {
+            return error(true, 'Keyword is too long. Search keyword can be up to 40 characters')
         }
         next()
-    },
+    }
 }

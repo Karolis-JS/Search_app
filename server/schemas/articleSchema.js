@@ -1,13 +1,9 @@
 const mongoose = require('mongoose')
 
-const Schema = mongoose.Schema;
+const ArticleSchema = mongoose.Schema;
 
-const articleSchema = new Schema({
+const articleSchema = new ArticleSchema({
     time:{
-        type: String,
-        required: true
-    },
-    keyword: {
         type: String,
         required: true
     },
