@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e331108d-0256-4d6c-b039-6d36535f34ca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/controllers/Main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/middle/middle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/router/Router.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/schemas/articleSchema.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
-    </list>
+    <list default="true" id="e331108d-0256-4d6c-b039-6d36535f34ca" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,7 +50,7 @@
       <updated>1625557036749</updated>
       <workItem from="1625557038089" duration="29578000" />
       <workItem from="1625641833360" duration="31000" />
-      <workItem from="1625672950604" duration="7022000" />
+      <workItem from="1625672950604" duration="7334000" />
     </task>
     <servers />
   </component>

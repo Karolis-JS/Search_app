@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import http from "../plugins/Fetch";
 
-function Search({setArticle, }) {
+function Search({setArticle}) {
 
     const [error, setError] = useState("")
     const searchRef = useRef()
